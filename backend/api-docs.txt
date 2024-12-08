@@ -44,3 +44,18 @@ curl --location 'localhost:4000/api/v1/user/login' \
     "password" : "1213456"
 }
 '
+
+
+GET USER PROFILE APIS:
+GET  ==>  localhost:4000/api/v1/user/profile
+
+
+curl --location 'localhost:4000/api/v1/user/profile' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU1YjlkYzBjYWNlODNkNjZiYjcyMDUiLCJpYXQiOjE3MzM2NzE4NjIsImV4cCI6MTczMzkzMTA2Mn0.BXzIqL86gI6jLewhEtEKaC9sn2CLEY3FiuEtISfVrTc' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU1YjlkYzBjYWNlODNkNjZiYjcyMDUiLCJpYXQiOjE3MzM2NzM1MTYsImV4cCI6MTczMzkzMjcxNn0._ilhZZFKfhPpjqMoy7idRGdcrIzuN6CTK1H_PZlklqc'
+
+
+LOGOUT USER PROFILE APIS:
+GET  ==>  localhost:4000/api/v1/user/logout
+
+curl --location 'localhost:4000/api/v1/user/logout'

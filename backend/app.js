@@ -4,10 +4,18 @@ import express from 'express';
 import cors from 'cors'
 import connectToDB from './db/connectDB.js';
 import morgan from 'morgan';
+import userRouter from './routes/user.route.js';
 const app = express();
 
+// express middlewares
 app.use(cors());
 app.use(morgan('dev'))
+app.use(express.json());
+
+
+// routes
+app.use('/api/v1/user' , userRouter)
+
 
 connectToDB()
 app.get('/', (req, res) => {

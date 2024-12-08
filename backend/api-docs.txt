@@ -1,0 +1,26 @@
+
+USER APIS:-
+
+REGISTER USER APIS:-
+POST  ==>  localhost:4000/api/v1/user/register
+
+{
+    "fullName" : {
+        "firstName" : "shaikh",
+        "lastName" : "shaikh"
+    },
+    "email" : "shaikh@gmail.com",
+    "password" : "1213456"
+}
+
+CURL:-
+curl --location 'localhost:4000/api/v1/user/register' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "fullName" : {
+        "firstName" : "shaikh",
+        "lastName" : "shaikh"
+    },
+    "email" : "shaikh@gmail.com",
+    "password" : "1213456"
+}'

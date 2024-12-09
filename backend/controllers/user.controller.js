@@ -16,7 +16,7 @@ export const registerUserController = async (req, res, next) => {
         // Check if the user already exists
         const existingUser = await UserModel.findOne({ email });
         if (existingUser) {
-            throw new Error('User already exists with this email');
+            return res.status(400).json({message : "User already exists with the same email"})
         }
 
         const hashPassword = await UserModel.hashPassword(password)

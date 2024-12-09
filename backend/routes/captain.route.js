@@ -1,7 +1,7 @@
 import express from 'express';
 import { body } from 'express-validator'
-import { isAuthUser } from '../middlewares/isAuth.middleware.js';
-import { registerCaptainController } from '../controllers/captain.controller.js';
+import { isAuthCaptain, isAuthUser } from '../middlewares/isAuth.middleware.js';
+import { getCaptainProfileController, loginCaptainController, logoutCaptainController, registerCaptainController } from '../controllers/captain.controller.js';
 
 const captainRouter = express.Router();
 
@@ -18,5 +18,21 @@ captainRouter.post('/register', [
     registerCaptainController
 )
 
+captainRouter.post('/login', [
+    body('email')
+        .isEmail()
+        .withMessage('Invalid email')
+        .notEmpty()
+        .withMessage('Email is required'),
+    body('password')
+        .isLength({ min: 6 })
+        .withMessage('Password must be at least 6 characters')
+        .notEmpty()
+        .withMessage('Password is required'),
+], loginCaptainController)
+
+
+captainRouter.get('/profile', isAuthCaptain, getCaptainProfileController)
+captainRouter.get('/logout', isAuthCaptain, logoutCaptainController)
 
 export default captainRouter

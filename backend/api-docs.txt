@@ -110,3 +110,38 @@ curl --location 'localhost:4000/api/v1/captain/register' \
         "vehicleType": "car"
     }
 }'
+
+
+LOGIN CAPTAIN API:
+POST  ==>  localhost:4000/api/v1/captain/login
+
+{
+    "email": "captain@gmail.com",
+    "password": "1213456"
+}
+
+CURL:
+curl --location 'localhost:4000/api/v1/captain/login' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU2OTg2OTQ5ZDIyMDE3ZTA4YjA3ZDMiLCJpYXQiOjE3MzM3MzAxMTAsImV4cCI6MTczMzgxNjUxMH0.KqlaLAYXhBp71hhdN1QWg4C9G554k4yDA0htxnERTXo' \
+--data-raw '{
+    "email": "captain@gmail.com",
+    "password": "1213456"
+}'
+
+
+GET CAPTAIN PROFILE API:
+GET  ==>  localhost:4000/api/v1/captain/profile
+
+
+CURL:
+curl --location 'localhost:4000/api/v1/captain/profile' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU2OTg2OTQ5ZDIyMDE3ZTA4YjA3ZDMiLCJpYXQiOjE3MzM3MzAzOTAsImV4cCI6MTczMzgxNjc5MH0.rXvYS8Kz85_ak3JxlQhf7K8GsXEJz_CCLxeOu0cLCG4'
+
+
+LOGOUT CAPTAIN API:
+GET  ==>  localhost:4000/api/v1/captain/logout
+
+
+CURL:
+curl --location 'localhost:4000/api/v1/captain/logout'

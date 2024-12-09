@@ -6,6 +6,7 @@ import cors from 'cors'
 import connectToDB from './db/connectDB.js';
 import morgan from 'morgan';
 import userRouter from './routes/user.route.js';
+import captainRouter from './routes/captain.route.js';
 const app = express();
 
 // express middlewares
@@ -17,6 +18,7 @@ app.use(cookieParser());
 
 // routes
 app.use('/api/v1/user' , userRouter)
+app.use('/api/v1/captain' , captainRouter)
 
 
 connectToDB()

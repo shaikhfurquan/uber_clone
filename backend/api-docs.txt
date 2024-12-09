@@ -59,3 +59,54 @@ LOGOUT USER PROFILE APIS:
 GET  ==>  localhost:4000/api/v1/user/logout
 
 curl --location 'localhost:4000/api/v1/user/logout'
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+CAPTAIN APIS:
+
+REGISTER CAPTAIN APIS:
+POST  ==>  localhost:4000/api/v1/captain/register
+
+{
+    "fullName": {
+        "firstName": "captain",
+        "lastName": "captain"
+    },
+    "email": "captain@gmail.com",
+    "password": "1213456",
+    // "status": "active",
+    "vehicle": {
+        "color": "red",
+        "plate": "MH 01 SF 2024",
+        "capacity": 3,
+        "vehicleType": "car"
+    }
+}
+
+CURL:
+curl --location 'localhost:4000/api/v1/captain/register' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "fullName": {
+        "firstName": "captain",
+        "lastName": "captain"
+    },
+    "email": "captain@gmail.com",
+    "password": "1213456",
+    
+    "vehicle": {
+        "color": "red",
+        "plate": "MH 01 SF 2024",
+        "capacity": 3,
+        "vehicleType": "car"
+    }
+}'
